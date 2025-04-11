@@ -60,6 +60,18 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+    		<groupId>org.firebirdsql.jdbc</groupId>
+    		<artifactId>jaybird</artifactId>
+    		<version>4.0.4.java11</version> <!-- ou versão mais recente compatível com sua JDK -->
+		</dependency>
+		<dependency>
+   			<groupId>org.hibernate.orm</groupId>
+    		<artifactId>hibernate-community-dialects</artifactId>
+    		<version>6.3.1.Final</version> <!-- ou a versão compatível com seu Hibernate -->
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
