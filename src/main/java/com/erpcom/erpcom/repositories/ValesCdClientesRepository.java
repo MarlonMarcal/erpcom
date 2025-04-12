@@ -6,7 +6,4 @@ import com.erpcom.erpcom.models.ValeScdCliente;
 import com.erpcom.erpcom.models.ValeScdClienteId;
 
 public interface ValesCdClientesRepository extends JpaRepository<ValeScdCliente,ValeScdClienteId>{
-
-
-    
 }
