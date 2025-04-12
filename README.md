@@ -1,4 +1,4 @@
-##ErpCom
-#Projeto pessoal para praticar
+## ErpCom
+# Projeto pessoal para praticar
 
-projeto visa monta um sistema ERP 
+projeto visa montar um sistema ERP,, usando java Spring
