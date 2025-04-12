@@ -16,6 +16,8 @@ import com.erpcom.erpcom.repositories.ProdutosRepository;
 @RequestMapping("/api/produtos")
 public class ProdutoController {
 
+   
+
     @Autowired
     private final ProdutosRepository produtosRepository = null;
 
@@ -36,7 +38,7 @@ public class ProdutoController {
 
 
 
-    private ProdutoResponseDTO toDto(Produto produto){
+   private ProdutoResponseDTO toDto(Produto produto){
         return new ProdutoResponseDTO(
                 produto.getCodProduto(),
                 produto.getCodOriginal(),
