@@ -42,6 +42,7 @@ public class ProdutoController {
                 produto.getCodOriginal(),
                 produto.getCodBarras(),
                 produto.getDescricao(),
+                produto.getMarca(),
                 produto.getCodEmbalagem(),
                 produto.getPrecoAquisicao(),
                 produto.getPreco(),

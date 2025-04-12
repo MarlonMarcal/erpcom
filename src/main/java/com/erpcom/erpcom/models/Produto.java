@@ -257,8 +257,9 @@ public class Produto {
     @Column(name = "ENCARGOSTRIBUTARIOS")
     private Double encargosTributarios;
 
-    @Column(name = "CODMARCA")
-    private Integer codMarca;
+    @ManyToOne
+    @JoinColumn(name = "CODMARCA", referencedColumnName = "CODMARCA")
+    private Marca marca;
 
     @Column(name = "EXPORTWEB", length = 1)
     private String exportWeb;
