@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.erpcom.erpcom.models.Marca;
+import com.erpcom.erpcom.dtos.MarcaResponseDTO;
 import com.erpcom.erpcom.repositories.MarcasRepository;
 
 @RestController
@@ -18,9 +18,13 @@ public class MarcasController {
     private final MarcasRepository marcasRepository = null;
 
     @GetMapping
-    public List<Marca> listarMarcas(){
+    public List<MarcaResponseDTO> getAll(){
 
-        return marcasRepository.findAll();
+        List<MarcaResponseDTO> listarMarcas = marcasRepository.findAll()
+            .stream()
+            .map(MarcaResponseDTO::new).toList();
+        
+        return listarMarcas;
 
         
     }

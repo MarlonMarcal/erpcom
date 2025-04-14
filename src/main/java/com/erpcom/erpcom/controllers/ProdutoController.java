@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.erpcom.erpcom.dtos.ProdutoResponseDTO;
-import com.erpcom.erpcom.models.Produto;
 import com.erpcom.erpcom.repositories.ProdutosRepository;
 
 @RestController
@@ -23,40 +22,21 @@ public class ProdutoController {
 
     @GetMapping
     public List<ProdutoResponseDTO> listarProdutos(){
-        return produtosRepository.findAll().stream()
-         .map(this::toDto)
-         .collect(null);            
+        return   produtosRepository.findAll()
+         .stream()
+         .map(ProdutoResponseDTO::new)
+         .toList();            
 
     }
 
     @GetMapping("/{codproduto}")
     public ProdutoResponseDTO buscarProdutoPorId(@PathVariable Integer codproduto){
         return produtosRepository.findById(codproduto)
-                .map(this::toDto)
+                .map(ProdutoResponseDTO::new)
                 .orElse(null);
     }    
 
 
-
-   private ProdutoResponseDTO toDto(Produto produto){
-        return new ProdutoResponseDTO(
-                produto.getCodProduto(),
-                produto.getCodOriginal(),
-                produto.getCodBarras(),
-                produto.getDescricao(),
-                produto.getMarca(),
-                produto.getCodEmbalagem(),
-                produto.getPrecoAquisicao(),
-                produto.getPreco(),
-                produto.getNbm(),
-                produto.getSitTrib(),
-                produto.getDataAtualizacao(),
-                produto.getDataCadastro(),
-                produto.getOperadorCadastro()
-
-        );
-        
-    }
 
     
 }

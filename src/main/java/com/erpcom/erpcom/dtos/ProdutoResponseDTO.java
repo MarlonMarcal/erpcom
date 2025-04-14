@@ -3,30 +3,28 @@ package com.erpcom.erpcom.dtos;
 import java.time.LocalDateTime;
 
 import com.erpcom.erpcom.models.Marca;
+import com.erpcom.erpcom.models.Produto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
-public class ProdutoResponseDTO {
+public record ProdutoResponseDTO(Integer codProduto,String codOriginal, String codBarras, String descricao, Marca marca, String codEmbalagem, Double precoAquisicao, Double preco, String nbm, String sitTrib, LocalDateTime dataAtualizacao, LocalDateTime dataCadastro, String operadorCadastro) {
 
-    private Integer codProduto;
-    private String codOriginal;
-	private String codBarras;
-    private String descricao;
-	private Marca marca;
-    private String codEmbalagem;
-	private Double precoAquisicao;
-	private Double preco;
-	private String nbm;
-	private String sitTrib;
-	private LocalDateTime dataAtualizacao;
-	private LocalDateTime dataCadastro;
-	private String operadorCadastro;
+	public ProdutoResponseDTO (Produto produto){
+
+		this( 
+			produto.getCodProduto(), 
+			produto.getCodOriginal(), 
+			produto.getCodBarras(), 
+			produto.getDescricao(), 
+			produto.getMarca(), 
+			produto.getCodEmbalagem(), 
+			produto.getPrecoAquisicao(), 
+			produto.getPreco(), 
+			produto.getNbm(), 
+			produto.getSitTrib(), 
+			produto.getDataAtualizacao(), 
+			produto.getDataCadastro(), 
+			produto.getOperadorCadastro()
+			);
+	}
     
 }

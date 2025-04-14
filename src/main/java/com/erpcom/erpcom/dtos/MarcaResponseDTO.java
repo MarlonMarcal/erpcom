@@ -1,17 +1,13 @@
 package com.erpcom.erpcom.dtos;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.erpcom.erpcom.models.Marca;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
-public class MarcaResponseDTO {
+public record MarcaResponseDTO(Integer codMarca, String marca, Integer qtdParaDesconto, Double desconto) {
 
-    private Integer codMarca;
-    private String marca;
+    public MarcaResponseDTO(Marca marca){
+
+        this(marca.getCodMarca(), marca.getMarca(), marca.getQtdParaDesconto(),marca.getDesconto() );
+        
+    }
 
 }
