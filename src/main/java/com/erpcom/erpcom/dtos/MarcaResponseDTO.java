@@ -6,7 +6,11 @@ public record MarcaResponseDTO(Integer codMarca, String marca, Integer qtdParaDe
 
     public MarcaResponseDTO(Marca marca){
 
-        this(marca.getCodMarca(), marca.getMarca(), marca.getQtdParaDesconto(),marca.getDesconto() );
+        this(
+                marca.getCodMarca(),
+                marca.getMarca(),
+                marca.getQtdParaDesconto(),
+                marca.getDesconto() );
         
     }
 

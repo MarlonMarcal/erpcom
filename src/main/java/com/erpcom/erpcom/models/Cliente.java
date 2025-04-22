@@ -1,13 +1,19 @@
 package com.erpcom.erpcom.models;
 
+import com.erpcom.erpcom.dtos.ClienteResponseDTO;
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "CLIENTES")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class Cliente {
 
     @Id
@@ -352,4 +358,20 @@ public class Cliente {
 
     @Column(name = "INSTAGRAM")
     private String instagram;
+
+    public Cliente(ClienteResponseDTO data){
+        this.cgc = data.getCgc();
+        this.razaoSocial = data.getRazaoSocial();
+        this.nomeFantasia = data.getNomeFantasia();
+        this.inscricaoEstadual = data.getInscEstadual();
+        this.endereco = data.getEndereco();
+        this.bairro = data.getBairro();
+        this.cidade = data.getCidade();
+        this.uf = data.getUf();
+        this.cep = data.getCep();
+        this.fone = data.getFone();
+        this.fax = data.getFax();
+        this.celular = data.getCelular();
+
+    }
 }
